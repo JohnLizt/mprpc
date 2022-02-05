@@ -1,0 +1,3 @@
+/home/bingo/Workdir/CMakeFiles/rebuild_cache.dir
+/home/bingo/Workdir/CMakeFiles/edit_cache.dir
+/home/bingo/Workdir/CMakeFiles/main.dir
