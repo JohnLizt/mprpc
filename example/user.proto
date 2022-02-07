@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package fixbug;
+
+option cc_generic_services = true;
+
+message ResultCode // 每个response都有错误码错误消息，重复代码抽出来
+{
+    int32 errcode = 1;
+    bytes errmsg = 2; //不用string用bytes
+}
+
+message LoginRequest 
+{
+    bytes name = 1;
+    bytes pwd = 2;
+}
+
+// 定义登陆响应消息类型
+message LoginResponse
+{
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+service UserServiceRpc
+{
+    rpc Login(LoginRequest ) returns(LoginResponse);
+}
