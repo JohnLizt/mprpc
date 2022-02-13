@@ -2,13 +2,14 @@
 # include <string>
 # include "user.pb.h"
 # include "mprpcapplication.h"
+# include "rpcprovider.h"
 
 /*
     UserService原先是本地服务，提供两个本地方法Login和GetFriendLists
 */
 class UserService : public fixbug::UserServiceRpc { // 使用在rpc服务提供方的
 public:
-bool Login(std::string name, std::string pwd) {
+    bool Login(std::string name, std::string pwd) {
     std::cout << "doing local service: Login" << std::endl;
     std::cout << "name:" << name << "pwd:" << pwd << std::endl;
     return true;
@@ -17,7 +18,7 @@ bool Login(std::string name, std::string pwd) {
     // 重写基类UserServiceRpc的虚函数 下面这些方法都是框架自动调用的
     //1. caller ===> Login(LoginRequest) => muduo => callee
     //2. callee ===> Login(LoginRequest) => 交到下面重写的Login方法了
-    void Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+    void Login(::google::protobuf::RpcController* controller,
                        const ::fixbug::LoginRequest* request,
                        ::fixbug::LoginResponse* response,
                        ::google::protobuf::Closure* done) 
@@ -40,13 +41,13 @@ bool Login(std::string name, std::string pwd) {
     }
 };
 
-int main (int argc， char **argv) {
+int main (int argc, char** argv) {
     // 框架初始化 对应基础类 Q：Init是不需要定义的吗？A:需要
     MprpcApplication::Init(argc, argv); // 读配置文件、ip端口号、日志路径等等
     
     // 把UserService对象发布(注册)到rpc节点上
     RpcProvider provider;
-    provider.NotifySerivce(new UserSerivce());
+    provider.NotifyService(new UserService());
 
     // 启动一个rpc服务发布节点 Run以后，进程进入阻塞状态，等待远程rpc调用请求
     provider.Run();

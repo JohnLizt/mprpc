@@ -1,6 +1,6 @@
 #include "rpcprovider.h"
 
-void RpcProvider::NotifyService (::PROTOBUF_NAMESPACE_ID::protobuf::Service *service) {
+void RpcProvider::NotifyService (::google::protobuf::Service *service) {
 
 }
 
