@@ -863,6 +863,12 @@ google/protobuf/port_undef.inc
 -
 
 ../src/include/mprpcapplication.h
+mprpcconfig.h
+../src/include/mprpcconfig.h
+
+../src/include/mprpcconfig.h
+unordered_map
+-
 
 ../src/include/rpcprovider.h
 google/protobuf/service.h

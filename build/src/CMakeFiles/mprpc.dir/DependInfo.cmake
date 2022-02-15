@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/bingo/Workdir/mprpc/src/mprpcapplication.cc" "/home/bingo/Workdir/mprpc/build/src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
+  "/home/bingo/Workdir/mprpc/src/mprpcconfig.cc" "/home/bingo/Workdir/mprpc/build/src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
   "/home/bingo/Workdir/mprpc/src/rpcprovider.cc" "/home/bingo/Workdir/mprpc/build/src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -102,6 +102,7 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../external/protobuf-ma
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../external/protobuf-master/src/google/protobuf/unknown_field_set.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../external/protobuf-master/src/google/protobuf/wire_format_lite.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/mprpcapplication.h
+example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/mprpcconfig.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/rpcprovider.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../example/callee/userservice.cc
 

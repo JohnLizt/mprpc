@@ -3,7 +3,11 @@
 
 src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o
  ../src/include/mprpcapplication.h
+ ../src/include/mprpcconfig.h
  /home/bingo/Workdir/mprpc/src/mprpcapplication.cc
+src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o
+ ../src/include/mprpcconfig.h
+ /home/bingo/Workdir/mprpc/src/mprpcconfig.cc
 src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
  ../external/protobuf-master/src/google/protobuf/port_def.inc
  ../external/protobuf-master/src/google/protobuf/port_undef.inc

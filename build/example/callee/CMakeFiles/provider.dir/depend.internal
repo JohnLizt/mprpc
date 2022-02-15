@@ -103,5 +103,6 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o
  ../external/protobuf-master/src/google/protobuf/unknown_field_set.h
  ../external/protobuf-master/src/google/protobuf/wire_format_lite.h
  ../src/include/mprpcapplication.h
+ ../src/include/mprpcconfig.h
  ../src/include/rpcprovider.h
  /home/bingo/Workdir/mprpc/example/callee/userservice.cc
