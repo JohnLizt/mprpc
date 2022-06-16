@@ -8,14 +8,24 @@ src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o: ../src/mprpcapplication.cc
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o: ../src/include/mprpcconfig.h
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o: ../src/mprpcconfig.cc
 
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/port_def.inc
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/port_undef.inc
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/service.h
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/stubs/callback.h
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/stubs/common.h
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/stubs/macros.h
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/stubs/platform_macros.h
-src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-master/src/google/protobuf/stubs/port.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/descriptor.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/port.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/port_def.inc
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/port_undef.inc
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/service.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/callback.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/common.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/hash.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/logging.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/macros.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/mutex.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/once.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/platform_macros.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/port.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/status.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/stringpiece.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../src/include/mprpcapplication.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../src/include/mprpcconfig.h
 src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../src/include/rpcprovider.h
 src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: ../src/rpcprovider.cc
 

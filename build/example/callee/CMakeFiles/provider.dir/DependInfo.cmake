@@ -13,7 +13,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/include"
   "../example"
-  "../external/protobuf-master/src"
+  "../external/protobuf-3.21.1/src"
   )
 
 # Targets to which this target links.
