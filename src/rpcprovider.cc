@@ -100,5 +100,45 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net
     std::cout << "args_str: " << args_str << std::endl;
     std::cout << "=========================================================" << std::endl;
 
+    // 获取service对象和method对象
+    auto it = m_serviceMap.find(service_name);
+    if (it == m_serviceMap.end()) {
+        std::cout << service_name << "is not exit!" << std::endl;
+        return;
+    }
+    auto mit = it->second.m_methodMap.find(method_name);
+    if (mit == it->second.m_methodMap.end()) {
+        std::cout << service_name << ":" << method_name << "is not exit!" << std::endl;
+        return;
+    }
 
+    google::protobuf::Service* service = it->second.m_service;
+    const google::protobuf::MethodDescriptor* method = mit->second;
+
+    // 生成rpc方法调用的请求request和相应response参数
+    google::protobuf::Message* request = service->GetRequestPrototype(method).New();
+    if (!request->ParseFromString(arg_str)) {
+        std::cout << "request parse error, content:" << args_str << std::endl;
+        return;
+    }
+    google::protobuf::Message* response = service->GetResponsePrototype(method).New();
+
+    //调用rpc节点上发布的service
+    //创建回调函数(callee Login最后的done->Run())
+    google::protobuf::Closure* done = google::protobuf::NewCallback<RpcProvider, const muduo::net::TcpConnectionPtr&, google::protobuf::Message*>(this, &RpcProvider::SendRpcResponse, conn, response) 
+
+    // new UserService().Login(controller, request, response, done)
+    service->CallMethod(method, nullptr, request, response, done);
+
+}
+
+void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr& conn, google::protobuf::Message* message) {
+    std::string response_str;
+    if (response->serializeToString(&response_str)) {
+        conn->send(response_str);
+        
+    } else {
+        std::cout << "serialize response_str error!" << std::endl;
+    }
+    conn->shutdown(); //模拟http的短链接服务，由rpcprovider主动断开连接
 }
