@@ -117,7 +117,7 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net
 
     // 生成rpc方法调用的请求request和相应response参数
     google::protobuf::Message* request = service->GetRequestPrototype(method).New();
-    if (!request->ParseFromString(arg_str)) {
+    if (!request->ParseFromString(args_str)) {
         std::cout << "request parse error, content:" << args_str << std::endl;
         return;
     }
@@ -125,16 +125,16 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net
 
     //调用rpc节点上发布的service
     //创建回调函数(callee Login最后的done->Run())
-    google::protobuf::Closure* done = google::protobuf::NewCallback<RpcProvider, const muduo::net::TcpConnectionPtr&, google::protobuf::Message*>(this, &RpcProvider::SendRpcResponse, conn, response) 
+    google::protobuf::Closure* done = google::protobuf::NewCallback<RpcProvider, const muduo::net::TcpConnectionPtr&, google::protobuf::Message*>(this, &RpcProvider::SendRpcResponse, conn, response); 
 
     // new UserService().Login(controller, request, response, done)
     service->CallMethod(method, nullptr, request, response, done);
 
 }
 
-void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr& conn, google::protobuf::Message* message) {
+void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr& conn, google::protobuf::Message* response) {
     std::string response_str;
-    if (response->serializeToString(&response_str)) {
+    if (response->SerializeToString(&response_str)) {
         conn->send(response_str);
         
     } else {
