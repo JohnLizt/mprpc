@@ -13,6 +13,7 @@ src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/goog
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/descriptor.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/endian.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/explicitly_constructed.h
+src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/extension_set.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/generated_enum_reflection.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/generated_enum_util.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/generated_message_reflection.h
@@ -51,7 +52,10 @@ src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/goog
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/strutil.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/unknown_field_set.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/wire_format_lite.h
+src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../src/include/mprpcapplication.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../src/include/mprpcchannel.h
+src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../src/include/mprpcconfig.h
+src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../src/include/rpcheader.pb.h
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: ../src/mprpcchannel.cc
 
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o: ../src/include/mprpcconfig.h

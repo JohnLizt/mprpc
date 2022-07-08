@@ -10,6 +10,7 @@ void RpcProvider::NotifyService (::google::protobuf::Service *service) {
     const google::protobuf::ServiceDescriptor* pserviceDesc = service->GetDescriptor();
     //获取服务名
     std::string service_name = pserviceDesc->name();
+    std::cout << "service_name:" << service_name << std::endl;
     //获取服务对象service的方法数量
     int methodCnt = pserviceDesc->method_count();
 
@@ -19,6 +20,7 @@ void RpcProvider::NotifyService (::google::protobuf::Service *service) {
         const google::protobuf::MethodDescriptor* pmethodDesc = pserviceDesc->method(i);
         std::string method_name = pmethodDesc->name();
         service_info.m_methodMap.insert({method_name,pmethodDesc});
+        std::cout << "method_name:" << method_name << std::endl;
     }
     service_info.m_service = service;
     m_serviceMap.insert({service_name,service_info});
@@ -28,7 +30,7 @@ void RpcProvider::NotifyService (::google::protobuf::Service *service) {
 void RpcProvider::Run() {
     std::string ip = MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
     uint16_t port = atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
-    muduo::net::InetAddress address(ip,port);
+    muduo::net::InetAddress address(ip, port);
 
     // 创建TcpServer
     std::string serverName = "RpcProvider";

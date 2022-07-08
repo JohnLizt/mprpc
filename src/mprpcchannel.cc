@@ -2,7 +2,11 @@
 #include "rpcheader.pb.h"
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <unistd.h>
 #include <errno.h>
+#include "mprpcapplication.h"
 
 /*
 header_size + service_name method_name args_size + args
@@ -60,6 +64,43 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         std::cout << "create socket error! errno: " << errno << std::endl;
         exit(EXIT_FAILURE);
     }
-    
-    
+
+    std::string ip = MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
+    uint16_t port = atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
+
+    struct sockaddr_in server_addr;
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(port);
+    server_addr.sin_addr.s_addr = inet_addr(ip.c_str());
+
+    // TCP连接
+    if (connect(clientfd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1) {
+        std::cout << "connect error! errno:" << errno << std::endl;
+        close(clientfd);
+        exit(EXIT_FAILURE);
+    }
+
+    if (send(clientfd, send_rpc_str.c_str(), send_rpc_str.size(), 0) == -1) {
+        std::cout << "connet error! errno:" << errno << std::endl;
+        close(clientfd);
+        return;
+    }
+
+    // 接收rpc response
+    char recv_buf[1024] = {0};
+    int recv_size = 0;
+    if (-1 == (recv_size = recv(clientfd, recv_buf, 1024, 0))) {
+        std::cout << "recv error! errno:" << errno << std::endl;
+        close(clientfd);
+        return;
+    }
+
+    // 写给用户的response
+    if (!response->ParseFromArray(recv_buf, recv_size)) {
+        std::cout << "parse error! response_str:" << recv_buf << std::endl;
+        close(clientfd);
+        return;
+    }
+
+    close(clientfd);
 }
