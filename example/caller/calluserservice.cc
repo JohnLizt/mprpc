@@ -1,7 +1,6 @@
 #include <iostream>
 #include "mprpcapplication.h"
 #include "user.pb.h"
-#include "mprpcchannel.h"
 
 int main(int argc, char** argv) {
     //初始化框架
@@ -13,14 +12,19 @@ int main(int argc, char** argv) {
     request.set_name("zhang san");
     request.set_pwd("123456");
     fixbug::LoginResponse response;
-    stub.Login(nullptr, &request, &response, nullptr); // RpcChannel->CallMethod 
+    MprpcController controller;
+    stub.Login(&controller, &request, &response, nullptr); // RpcChannel->CallMethod 
 
     //一次rpc调用完成，读结果
-    if (response.result().errcode() == 0) {
-        std::cout << "rpc login response success: " << response.success() << std::endl;
+    if (controller.Failed()) {
+        std::cout << controller.ErrorText() << std::endl;
     } else {
-        std::cout << "rpc login response error: " << response.result().errmsg() << std::endl;
+        if (response.result().errcode() == 0) {
+            std::cout << "rpc login response success: " << response.success() << std::endl;
+        } else {
+            std::cout << "rpc login response error: " << response.result().errmsg() << std::endl;
+        }
     }
-    
+
     return 0;
 }

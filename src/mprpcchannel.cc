@@ -24,7 +24,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     if (request->SerializePartialToString(&args_str)) {
         args_size = args_str.size();
     } else {
-        std::cout << "serialize request error!" << std::endl;
+        controller->SetFailed("serialize request error!");
         return;
     }
 

@@ -12,8 +12,9 @@ public:
 
     // 目前不需要实现的方法
     void StartCancel();
-    virtual bool IsCanceled() const;
-    virtual void NotifyOnCancel(Closure* callback);
+    bool IsCanceled() const;
+    void NotifyOnCancel(google::protobuf::Closure* callback);
+private:
     bool m_failed; //RPC方法执行过程中的状态
     std::string m_errText; //RPC方法执行过程中的错误信息
 }
