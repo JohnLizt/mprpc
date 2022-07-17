@@ -101,8 +101,12 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../external/protobuf-3.
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/stubs/strutil.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/unknown_field_set.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../external/protobuf-3.21.1/src/google/protobuf/wire_format_lite.h
+example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/lockqueue.h
+example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/logger.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/mprpcapplication.h
+example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/mprpcchannel.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/mprpcconfig.h
+example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/mprpccontroller.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../src/include/rpcprovider.h
 example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../example/callee/userservice.cc
 

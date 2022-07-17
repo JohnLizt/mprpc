@@ -102,7 +102,11 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o
  ../external/protobuf-3.21.1/src/google/protobuf/stubs/strutil.h
  ../external/protobuf-3.21.1/src/google/protobuf/unknown_field_set.h
  ../external/protobuf-3.21.1/src/google/protobuf/wire_format_lite.h
+ ../src/include/lockqueue.h
+ ../src/include/logger.h
  ../src/include/mprpcapplication.h
+ ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h
+ ../src/include/mprpccontroller.h
  ../src/include/rpcprovider.h
  /home/bingo/Workdir/mprpc/example/callee/userservice.cc

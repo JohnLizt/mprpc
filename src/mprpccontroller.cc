@@ -24,6 +24,6 @@ void MprpcController::SetFailed(const std::string& reason) {
 }
 
 // 目前未实现具体的功能
-void MprpcController::StartCancel();
-bool MprpcController::IsCanceled() const;
-void MprpcController::NotifyOnCancel(google::protobuf::Closure* callback);
+void MprpcController::StartCancel() {}
+bool MprpcController::IsCanceled() const {return false;}
+void MprpcController::NotifyOnCancel(google::protobuf::Closure* callback) {}

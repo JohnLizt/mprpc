@@ -916,12 +916,46 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
+../src/include/lockqueue.h
+queue
+-
+thread
+-
+mutex
+-
+condition_variable
+-
+
+../src/include/logger.h
+lockqueue.h
+../src/include/lockqueue.h
+string
+-
+
 ../src/include/mprpcapplication.h
 mprpcconfig.h
 ../src/include/mprpcconfig.h
+mprpcchannel.h
+../src/include/mprpcchannel.h
+mprpccontroller.h
+../src/include/mprpccontroller.h
+
+../src/include/mprpcchannel.h
+google/protobuf/service.h
+-
+google/protobuf/descriptor.h
+-
+google/protobuf/message.h
+-
 
 ../src/include/mprpcconfig.h
 unordered_map
+-
+
+../src/include/mprpccontroller.h
+google/protobuf/service.h
+-
+string
 -
 
 ../src/include/rpcprovider.h
@@ -957,4 +991,6 @@ mprpcapplication.h
 /home/bingo/Workdir/mprpc/example/callee/mprpcapplication.h
 rpcprovider.h
 /home/bingo/Workdir/mprpc/example/callee/rpcprovider.h
+logger.h
+/home/bingo/Workdir/mprpc/example/callee/logger.h
 

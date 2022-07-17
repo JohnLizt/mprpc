@@ -17,4 +17,4 @@ public:
 private:
     bool m_failed; //RPC方法执行过程中的状态
     std::string m_errText; //RPC方法执行过程中的错误信息
-}
+};

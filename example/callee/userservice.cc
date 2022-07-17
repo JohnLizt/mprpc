@@ -3,6 +3,7 @@
 # include "user.pb.h"
 # include "mprpcapplication.h"
 # include "rpcprovider.h"
+# include "logger.h"
 
 /*
     UserService原先是本地服务，提供两个本地方法Login和GetFriendLists
@@ -44,7 +45,9 @@ public:
 int main (int argc, char** argv) {
     // 框架初始化 对应基础类 Q：Init是不需要定义的吗？A:需要
     MprpcApplication::Init(argc, argv); // 读配置文件、ip端口号、日志路径等等
-    
+    LOG_INFO("first log message!");
+    LOG_ERR("%s:%s:%d", __FILE__, __FUNCTION__, __LINE__);
+
     // 把UserService对象发布(注册)到rpc节点上
     RpcProvider provider;
     provider.NotifyService(new UserService());
